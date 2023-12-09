@@ -1,0 +1,20 @@
+version: '3'
+
+env:
+  EXEC: docker exec 4b391a546f48
+
+
+tasks:
+  sail-up:
+    desc: Start containers
+    cmds:
+      - ./vendor/bin/sail up
+  
+  sail-down:
+    desc: Start containers
+    cmds:
+      - ./vendor/bin/sail down
+
+  migrate:
+    cmds:
+      - $EXEC php artisan migrate
